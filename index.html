@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <title>Random Country Time Zones</title>
+  <meta name="description" content="Pick a random country and compare its time to Israel's.">
+
+  <!-- Installable app (PWA) -->
+  <link rel="manifest" href="manifest.json">
+  <meta name="theme-color" content="#1e3a8a">
+  <link rel="icon" type="image/png" sizes="192x192" href="icons/icon-192.png">
+
+  <!-- iPhone home-screen app -->
+  <link rel="apple-touch-icon" href="icons/apple-touch-icon.png">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="apple-mobile-web-app-title" content="World Time">
+
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main class="card">
+    <h1>🌍 Random Country vs 🇮🇱 Israel</h1>
+    <p class="subtitle">Pick a random country and compare its time to Israel's.</p>
+
+    <button id="pickBtn">Pick a random country</button>
+
+    <div id="status" class="status"></div>
+
+    <section id="result" class="result hidden">
+      <div class="country-header">
+        <img id="flag" alt="">
+        <div>
+          <h2 id="countryName"></h2>
+          <p id="capital" class="muted"></p>
+        </div>
+      </div>
+
+      <div class="israel-box">
+        <span>🇮🇱 Israel now:</span>
+        <strong id="israelTime"></strong>
+        <span id="israelOffset" class="muted"></span>
+      </div>
+
+      <ul id="zones" class="zones"></ul>
+    </section>
+
+    <!-- Install helpers: shown only when they apply -->
+    <div class="install">
+      <button id="installBtn" class="secondary hidden">📲 Install app</button>
+      <p id="iosNote" class="ios-note hidden">
+        📱 <strong>On iPhone:</strong> tap the <strong>Share</strong> button
+        <span class="share-icon" aria-hidden="true">⬆︎</span> in Safari, then
+        <strong>Add to Home Screen</strong>.
+      </p>
+    </div>
+  </main>
+
+  <!-- Country & time zone data, loaded from the internet -->
+  <script src="https://cdn.jsdelivr.net/npm/countries-and-timezones@3.6.0/dist/index.min.js"></script>
+  <script src="script.js"></script>
+  <script src="install.js"></script>
+</body>
+</html>
